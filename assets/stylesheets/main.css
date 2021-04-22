@@ -1,0 +1,396 @@
+body{
+    margin:0;
+    background-image: url('https://149349300.v2.pressablecdn.com/wp-content/uploads/2019/06/3d-cube-background-4k-yo.jpg');
+    background-size: cover;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top:0;
+}
+a{
+    text-decoration: none;
+}
+/* helper class */
+.w-100{
+    width:100%;
+}
+.row{
+    display: flex;
+}
+
+/* --------------------------------------------- */
+*{
+    box-sizing: border-box;
+}
+/* variables */
+:root{
+    --alfa:'Alfa Slab One';
+    --nixi:'Nixie One';
+    --raleway:'Raleway';
+    --arvo:'Arvo';
+    --lato:'Lato';
+}
+#container{
+    position: relative;
+    width:450px;
+    height: 550px;
+    margin:100px auto 0 auto;
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    
+}
+/* pages */
+#left-page,#right-page,.front,.back{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    
+    
+}
+
+#left-page .back,
+#right-page .back{
+    transform: rotateY(180deg);
+}
+
+#left-page .front{
+ /* z-index: 45000; */
+ backface-visibility: hidden;
+}
+#left-page .back{
+/* z-index: 40000; */
+backface-visibility: hidden;
+overflow-y: scroll;
+}
+#mid-page{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#left-page{
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: 50000;
+    transition:transform 1s;
+    transition-delay: 1s;
+
+
+}
+#right-page{
+    transform-origin: right;
+    transform-style: preserve-3d;
+    /* z-index: 30000; */
+    transition:transform 1.5s;
+
+}
+#right-page .front{
+/* z-index: 25000; */
+backface-visibility: hidden;
+}
+#right-page .back{
+    /* z-index: 20000; */
+ backface-visibility: hidden;
+ overflow-y: scroll;
+
+}
+#container:hover #left-page{
+    transform: rotateY(-180deg);
+    transition:transform 0.5s;
+
+    
+}
+
+#container:hover #right-page{
+    transform: rotateY(180deg);
+    transition:transform 5s;
+
+    
+}
+.front,.back,#mid-page{
+    background-color:#fff;
+    border: 1px solid #000;
+}
+
+/* leftpage front section */
+#left-page .front{
+    background-image: url("https://themes.pixelwars.org/bookcard-wp/wp-content/uploads/2013/04/cover.jpg");
+    background-size: 100% 100%;
+}
+#left-page .front .intro {
+    text-align: center;
+
+}
+#left-page .front .intro h1{
+    font-family: var(--alfa);
+    text-transform: uppercase;
+    font-size: 2.7em;
+    /* 1em =16px */
+    color:white;
+    text-shadow: -5px 6px 0px #D45848;
+    margin:0;
+}
+#left-page .front .intro p{
+    color:#fff;
+    font-family: var(--nixi);
+}
+#left-page .front .about h3{
+    color: #FFCC00;
+    font-family: var(--raleway);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px #000;
+    margin:2em 0px 0px 0px;
+}
+
+#left-page .front .about span{
+    display: block;
+    color: #fff;
+    font-family: var(--raleway);
+    font-size: 20px;
+    font-weight: 200;
+
+
+}
+#left-page .front .about ,
+#left-page .front .intro{
+padding:0.5em 1em 0em 1em;
+}
+#left-page .back,
+#mid-page,
+#right-page .back{
+    padding:1.5em 2.5em;
+}
+
+.mainHeading{
+    text-align: center;
+    position: relative;
+}
+.mainHeading:after{
+    display:block;
+    content:"";
+    position:absolute;
+    top:50%;
+    width:100%;
+    height: 1px;
+    background-color: #000;
+    z-index:-1;
+
+}
+.mainHeading span{
+    display: inline-block;
+    background-color: #000;
+    color:#fff;
+    padding: 6px 16px;
+    font-family: var(--arvo);
+    border-radius: 7px;
+}
+
+/* left-page back */
+#left-page .back .myIntro{
+    text-align: center;
+}
+#left-page .myIntro p{
+    font-family: var(--lato);
+    color: #555;
+    font-size:20px;
+
+}
+
+#left-page .myIntro p span{
+    color:#000;
+    font-weight: 900;
+    border-bottom:3px solid #000;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    
+}
+ .subheadings{
+    text-align: center;
+}
+.subheadings span{
+    display: inline-block;
+    padding: 3px 12px;
+    border:1px dashed #888;
+}
+#left-page .back .employment .emp{
+    display: flex;
+    justify-content:space-between;
+}
+.employment .emp h4
+{
+    margin:0;
+}
+.emp .time
+{
+    width: 30%;
+    text-align: center;
+}
+.emp .time span{
+    display: block;
+    padding: 8px 10px;
+    border:1px solid #888;
+    border-radius: 10px;
+}
+.emp .post{
+    width:60%;
+}
+
+.devskill h4:after{
+    display: block;
+    content: "";
+    width:100%;
+    height: 8px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+#Devskills .devskill:nth-child(3) h4:after{
+    width:50%;
+}
+
+/* MID PAGE */
+#mid-page {
+    background-color:aliceblue;
+}
+#mid-page nav{
+    text-align: center;
+}
+#mid-page nav ul{
+display: flex;
+justify-content: space-around;
+}
+#mid-page nav ul li{
+    text-align: center;
+}
+#mid-page nav ul li a {
+color:#000;
+}
+#mid-page .allProject .row{
+    justify-content: space-around;
+}
+#mid-page .project{
+    width: 45%;
+    position: relative;
+
+}
+#mid-page .project img{
+    filter: grayscale();
+    /* display: inline-block; */
+    /* border: 8px solid #ffffff; */
+   box-shadow: 4px 0px 4px grey,4px 0px 4px grey;
+
+}
+#mid-page .project .hamburger{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+#mid-page .project .hamburger i{
+    background-color: #888;
+    display: inline-block;
+    padding: 10px;
+    color:#fff;
+}
+#mid-page .project:hover .hamburger{
+    display: block;
+    filter:brightness(120%);
+} 
+#mid-page .project:hover img{
+    filter:none;
+}
+#right-page .back .contact-start{
+text-align: center;
+}
+#socialize{
+    margin-bottom: 20px;
+}
+#socialize ul{
+    display: flex;
+    justify-content: space-around;
+}
+#socialize ul li a i{
+    color:#000;
+
+font-size:20px;
+}
+#socialize ul li a{
+    display: block;
+    padding:12px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+#socialize ul li a:hover i {
+color:#fff;
+}
+#socialize ul li:first-child a:hover{
+    background-color:#339AF0;
+}
+#socialize ul li:nth-child(2) a:hover{
+    background-color:blue ;
+}
+#socialize ul li:nth-child(3) a:hover{
+    background-color:red ;
+}
+
+#socialize ul li:last-child a:hover{
+    background-color:#333 ;
+}
+#dropline .alt-bar {
+    text-align: center;
+}
+#dropline .alt-bar .bar{
+    display: inline-block;
+    height: 5px;
+    width:5%;
+}
+#dropline .alt-bar .bar:nth-child(odd){
+    background-color: #D45848;
+}
+#dropline .alt-bar .bar:nth-child(even){
+    background-color: blue;
+}
+#dropline #signature{
+    text-align: center;
+    margin:0;
+}
+
+#dropline #signature span{
+    font-size: 25px;
+    font-family: cursive;
+}
+#dropline .email,.name{
+    text-align: center;
+}
+#dropline .userImage{
+    text-align: center;
+}
+#dropline .userImage img{
+    width:150px;
+    height:150px;
+}
+#form{
+    margin:50px 0;
+}
+#form input,label,textarea{
+    display: block;
+    margin: 8px 0;
+}
+#form input{
+    width: 62%;
+    padding: 10px;
+}
+#form button[type="submit"]
+{
+    background-color: #000;
+    color: #fff;
+    padding: 8px 15px;
+}
